@@ -1,5 +1,4 @@
 <?php
-
 error_reporting(-1);
 require_once 'connect.php';
 require_once 'funcs.php';
@@ -19,7 +18,6 @@ if(!empty($_POST)){
 //получаем массив всех сообщений
 $messages = get_mess();
 ?>
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -44,12 +42,12 @@ $messages = get_mess();
 </div>
 	<hr>
 
-//вывод всех сообщений
+
 	<?php
     if(!empty($messages)):
 		 foreach($messages as $message):
 			echo "<div class=\"alert alert-info\"> ";
-			echo "<p>Автор:" . htmlspecialchars($message['name']) . " <br> Дата: {$message['time']}</p>";
+			echo "<p>Автор: " . htmlspecialchars($message['name']) . " <br> Дата: {$message['time']}</p>";
 			echo "<div>" . nl2br(htmlspecialchars($message['message'])) . "</div>";
 			echo "<a href='index.php?del={$message['id']}'> <buttone type=\"submit\" class=\"btn btn-danger\">Удалить</buttone></a></div>";
 		endforeach;
